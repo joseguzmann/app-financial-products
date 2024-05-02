@@ -1,5 +1,10 @@
-import {MainScreen} from "./src/screens/main";
+import {MainScreen} from "@/screens/main";
+import {Providers} from "@/context/providers";
 
 export default function App() {
-  return <MainScreen />;
+  return (
+      <Providers>
+        <MainScreen/>
+      </Providers>
+  );
 }

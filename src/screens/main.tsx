@@ -1,22 +1,23 @@
-import {StyleSheet, Text, View} from "react-native";
-import {StatusBar} from "expo-status-bar";
+import {ReactElement} from "react";
+import {FinancialProductsScreen} from "./financial-products";
+import {ProductDetailsScreen} from "@/screens/financial-products/details";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
 
-const MainScreen = (): JSX.Element => {
+const Stack = createNativeStackNavigator();
+
+const MainScreen = (): ReactElement => {
     return (
-        <View style={styles.container}>
-            <Text>Open up App.tsx to start working on your apss</Text>
-            <StatusBar style="auto" />
-        </View>
+        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={"List"}>
+            <Stack.Screen
+                name="List"
+                component={FinancialProductsScreen}
+            />
+            <Stack.Screen
+                name="Details"
+                component={ProductDetailsScreen}
+            />
+        </Stack.Navigator>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
 
 export {MainScreen}
