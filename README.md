@@ -33,7 +33,7 @@ Para comenzar, asegúrate de tener Node.js y npm instalados en tu máquina. Lueg
 Una vez que hayas instalado todas las dependencias, puedes iniciar el proyecto ejecutando el siguiente comando:
 
 ```
-    npm run dev
+    npm run start
 ```
 
 
